@@ -168,20 +168,20 @@ const RezeptePage = () => {
                   <div className="lg:col-span-1">
                     <div className="flex flex-col gap-4 mb-6 border-b border-adria/10 pb-4">
                       <h3 className="font-playfair text-2xl font-semibold text-adria whitespace-nowrap">Zutaten</h3>
-                      <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-1 border border-gray-100 self-start">
+                      <div className="flex items-center gap-4 bg-gray-50 rounded-lg p-1.5 border border-gray-100 self-start min-w-[140px] justify-between">
                         <button
                           onClick={() => setPortionCount(Math.max(1, portionCount - 1))}
-                          className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-white hover:shadow-sm transition-all text-graphite"
+                          className="w-9 h-9 flex items-center justify-center rounded-md hover:bg-white hover:shadow-sm transition-all text-graphite"
                         >
                           <Minus size={14} />
                         </button>
-                        <div className="flex items-center gap-1.5 px-1 min-w-[3rem] justify-center text-graphite">
-                          <span className="font-playfair text-lg font-bold text-adria">{portionCount}</span>
+                        <div className="flex items-center gap-2 px-2 min-w-[3.5rem] justify-center text-graphite">
+                          <span className="font-playfair text-xl font-bold text-adria">{portionCount}</span>
                           <span className="text-[10px] font-lato text-graphite/40 uppercase font-bold">Pers.</span>
                         </div>
                         <button
                           onClick={() => setPortionCount(portionCount + 1)}
-                          className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-white hover:shadow-sm transition-all text-graphite"
+                          className="w-9 h-9 flex items-center justify-center rounded-md hover:bg-white hover:shadow-sm transition-all text-graphite"
                         >
                           <Plus size={14} />
                         </button>

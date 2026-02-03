@@ -29,8 +29,13 @@ const PillarCard = ({ title, hoverText, ctaText, ctaLink, image, delay }: Pillar
 
   const isExternal = ctaLink.startsWith('http');
 
-  return (
-    <div ref={cardRef} className={`relative h-[450px] md:h-[600px] rounded-2xl overflow-hidden group cursor-pointer transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+  const CardContent = (
+    <div
+      ref={cardRef}
+      className={`relative h-[450px] md:h-[600px] rounded-2xl overflow-hidden group cursor-pointer transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="absolute inset-0">
         <img src={image} alt={title} className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${isHovered ? 'scale-110' : 'scale-100'}`} />
       </div>
@@ -42,21 +47,20 @@ const PillarCard = ({ title, hoverText, ctaText, ctaLink, image, delay }: Pillar
           <div className={`overflow-hidden transition-all duration-700 ${isHovered ? 'max-h-40 opacity-100 mb-6' : 'max-h-0 opacity-0 mb-0'}`}>
             <p className="font-lato text-white/90 text-sm md:text-base leading-relaxed">{hoverText}</p>
           </div>
-          {isExternal ? (
-            <a href={ctaLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white font-lato font-bold text-xs uppercase tracking-[0.2em] group/btn">
-              {ctaText}
-              <div className="w-8 h-[1px] bg-white/50 transition-all duration-300 group-hover/btn:w-12 group-hover/btn:bg-white" />
-            </a>
-          ) : (
-            <Link to={ctaLink} className="inline-flex items-center gap-2 text-white font-lato font-bold text-xs uppercase tracking-[0.2em] group/btn">
-              {ctaText}
-              <div className="w-8 h-[1px] bg-white/50 transition-all duration-300 group-hover/btn:w-12 group-hover/btn:bg-white" />
-            </Link>
-          )}
+          <div className="inline-flex items-center gap-2 text-white font-lato font-bold text-xs uppercase tracking-[0.2em] group/btn">
+            {ctaText}
+            <div className="w-8 h-[1px] bg-white/50 transition-all duration-300 group-hover/btn:w-12 group-hover/btn:bg-white" />
+          </div>
         </div>
       </div>
     </div>
   );
+
+  if (isExternal) {
+    return <a href={ctaLink} target="_blank" rel="noopener noreferrer" className="block outline-none">{CardContent}</a>;
+  }
+
+  return <Link to={ctaLink} className="block outline-none">{CardContent}</Link>;
 };
 
 const ThreePillarsSection = () => {

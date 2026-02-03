@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { Clock, Users, ChefHat, Search } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { Clock, Users, ChefHat, Search, Share2, Plus, Minus, CheckCircle2 } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { recipes, type Recipe } from '@/data/recipes';
 
@@ -12,9 +13,43 @@ const categories = [
 ];
 
 const RezeptePage = () => {
+  const [searchParams] = useSearchParams();
   const [activeCategory, setActiveCategory] = useState('alle');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
+  const [portionCount, setPortionCount] = useState(4);
+  const [showCopyFeedback, setShowCopyFeedback] = useState(false);
+
+  useEffect(() => {
+    const recipeId = searchParams.get('recipe');
+    if (recipeId) {
+      const recipe = recipes.find(r => r.id === recipeId);
+      if (recipe) setSelectedRecipe(recipe);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (selectedRecipe) {
+      setPortionCount(selectedRecipe.servings);
+    }
+  }, [selectedRecipe]);
+
+  const adjustIngredient = (ingredient: string, originalServings: number, targetServings: number) => {
+    const ratio = targetServings / originalServings;
+    return ingredient.replace(/(\d+(?:[.,]\d+)?)/g, (match) => {
+      const value = parseFloat(match.replace(',', '.'));
+      const adjustedValue = value * ratio;
+      return adjustedValue % 1 === 0 ? adjustedValue.toString() : adjustedValue.toFixed(1).replace('.', ',');
+    });
+  };
+
+  const handleCopyLink = () => {
+    const url = `${window.location.origin}${window.location.pathname}?recipe=${selectedRecipe?.id}`;
+    navigator.clipboard.writeText(url).then(() => {
+      setShowCopyFeedback(true);
+      setTimeout(() => setShowCopyFeedback(false), 2000);
+    });
+  };
 
   const filteredRecipes = recipes.filter((recipe) => {
     const matchesCategory = activeCategory === 'alle' || recipe.category === activeCategory;
@@ -38,7 +73,7 @@ const RezeptePage = () => {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/Adria_Kroatien.jpg)' }} />
         <div className="absolute inset-0 hero-overlay" />
         <div className="relative z-10 h-full flex items-center justify-center px-4">
-          <div className="text-center max-w-3xl pt-16">
+          <div className="text-center max-w-3xl pt-24 md:pt-32">
             <span className="inline-block font-lato text-[10px] font-bold tracking-[0.25em] uppercase text-white/80 mb-4">Kulinarik</span>
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Rezepte aus der Adria</h1>
             <p className="font-lato text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">Entdecken Sie die Geheimnisse der mediterranen Küche. Von herzhaften Klassikern bis hin zu leichten Meeresfrüchte-Gerichten.</p>
@@ -109,10 +144,18 @@ const RezeptePage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8 text-white">
                   <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">{selectedRecipe.title}</h2>
-                  <div className="flex items-center gap-6">
-                    <div className="flex items-center gap-2 font-lato text-sm font-medium"><Clock className="w-4 h-4" />{selectedRecipe.prepTime}</div>
-                    <div className="flex items-center gap-2 font-lato text-sm font-medium"><Users className="w-4 h-4" />{selectedRecipe.servings} Pers.</div>
-                    <div className={`font-lato text-[10px] uppercase font-bold px-3 py-1 rounded-full bg-white text-adria`}>{selectedRecipe.difficulty}</div>
+                  <div className="flex flex-wrap items-center gap-6">
+                    <div className="flex items-center gap-6">
+                      <div className="flex items-center gap-2 font-lato text-sm font-medium"><Clock className="w-4 h-4" />{selectedRecipe.prepTime}</div>
+                      <div className={`font-lato text-[10px] uppercase font-bold px-3 py-1 rounded-full bg-white text-adria`}>{selectedRecipe.difficulty}</div>
+                    </div>
+                    <button
+                      onClick={handleCopyLink}
+                      className="flex items-center gap-2 bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all px-4 py-2 rounded-lg text-sm font-medium border border-white/20"
+                    >
+                      {showCopyFeedback ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Share2 className="w-4 h-4" />}
+                      {showCopyFeedback ? 'Link kopiert!' : 'Rezept teilen'}
+                    </button>
                   </div>
                 </div>
                 <div className="absolute top-8 right-8 w-24 h-24 bg-white/90 backdrop-blur-md rounded-full p-4 shadow-2xl border border-white/20 transform -rotate-12 hidden md:block">
@@ -121,14 +164,34 @@ const RezeptePage = () => {
               </div>
 
               <div className="p-8 md:p-12">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 md:gap-20">
                   <div className="lg:col-span-1">
-                    <h3 className="font-playfair text-2xl font-semibold text-adria mb-6 border-b border-adria/10 pb-4">Zutaten</h3>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-adria/10 pb-4">
+                      <h3 className="font-playfair text-2xl font-semibold text-adria whitespace-nowrap">Zutaten</h3>
+                      <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-1 border border-gray-100 self-start sm:self-auto">
+                        <button
+                          onClick={() => setPortionCount(Math.max(1, portionCount - 1))}
+                          className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-white hover:shadow-sm transition-all text-graphite"
+                        >
+                          <Minus size={14} />
+                        </button>
+                        <div className="flex items-center gap-1.5 px-1 min-w-[3rem] justify-center text-graphite">
+                          <span className="font-playfair text-lg font-bold text-adria">{portionCount}</span>
+                          <span className="text-[10px] font-lato text-graphite/40 uppercase font-bold">Pers.</span>
+                        </div>
+                        <button
+                          onClick={() => setPortionCount(portionCount + 1)}
+                          className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-white hover:shadow-sm transition-all text-graphite"
+                        >
+                          <Plus size={14} />
+                        </button>
+                      </div>
+                    </div>
                     <ul className="space-y-4">
                       {selectedRecipe.ingredients.map((ingredient, i) => (
                         <li key={i} className="flex items-start gap-3 font-lato text-graphite/80 leading-relaxed">
                           <span className="w-1.5 h-1.5 rounded-full bg-adria mt-2 flex-shrink-0" />
-                          {ingredient}
+                          {adjustIngredient(ingredient, selectedRecipe.servings, portionCount)}
                         </li>
                       ))}
                     </ul>

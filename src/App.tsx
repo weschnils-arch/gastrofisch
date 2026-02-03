@@ -8,6 +8,9 @@ import GrosshandelPage from './pages/GrosshandelPage';
 import AboutPage from './pages/AboutPage';
 import RezeptePage from './pages/RezeptePage';
 import KontaktPage from './pages/KontaktPage';
+import ImpressumPage from './pages/ImpressumPage';
+import DatenschutzPage from './pages/DatenschutzPage';
+import CookieBanner from './components/CookieBanner';
 import './App.css';
 
 function App() {
@@ -31,9 +34,12 @@ function App() {
             <Route path="/ueber-uns" element={<AboutPage />} />
             <Route path="/rezepte" element={<RezeptePage />} />
             <Route path="/kontakt" element={<KontaktPage />} />
+            <Route path="/impressum" element={<ImpressumPage />} />
+            <Route path="/datenschutz" element={<DatenschutzPage />} />
           </Routes>
         </main>
         <Footer />
+        <CookieBanner />
       </div>
     </Router>
   );

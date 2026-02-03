@@ -26,10 +26,10 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-8'}`}>
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-6' : 'bg-transparent py-10'}`}>
       <div className="section-container">
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center justify-between w-full translate-y-1.5">
+        <div className="hidden lg:flex items-center justify-between w-full">
           {/* Left Links */}
           <div className="flex-1 flex justify-end items-center gap-12 xl:gap-16">
             {leftLinks.map((link) => (

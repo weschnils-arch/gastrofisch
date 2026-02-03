@@ -15,10 +15,10 @@ const AboutPage = () => {
   const timeline = [
     { year: '1990', title: 'Die Anfänge', description: 'Ivo Bartulović beginnt in Split mit dem Handel von kroatischen Garnelen aus Wildfang.' },
     { year: '2004', title: 'Familienzuwachs', description: 'Toni Bartulović kommt ins Unternehmen. Gemeinsam bauen sie den Großhandel aus.' },
-    { year: '2008', title: 'Erster Einzelhandel', description: 'Eröffnung des ersten Fischgeschäfts in Split.' },
-    { year: '2018', title: 'Expansion nach Wien', description: 'Milan Prgomet schlägt die Expansion nach Wien vor.' },
-    { year: '2019', title: 'Gastro Fisch Brač', description: 'Eröffnung der Boutique in Wien-Neubau.' },
-    { year: 'Heute', title: '170+ Mitarbeiter', description: 'Das Unternehmen wächst stetig.' },
+    { year: '2008', title: 'Einzelhandel trotz Krise', description: 'Mitten in der globalen Finanzkrise eröffnet der erste Einzelhandel in Split – ein mutiger Schritt, der sich auszahlt.' },
+    { year: '2018', title: 'Centaurus GmbH & Wien', description: 'Gründung der Centaurus GmbH. Treffen mit Milan Prgomet beim Hajduk Split Stadion zur Planung der Wiener Expansion.' },
+    { year: '2019', title: 'Gastro Fisch Brač', description: 'Eröffnung der Boutique in Wien-Neubau – unser erster Standort außerhalb Kroatiens.' },
+    { year: 'Heute', title: 'Stetiges Wachstum', description: 'Mit über 170 Mitarbeitern und einer starken Logistik beliefern wir Gastronomie und Privatkunden.' },
   ];
 
   const founders = [
@@ -33,7 +33,7 @@ const AboutPage = () => {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/Thunfischfang1.jpg)' }} />
         <div className="absolute inset-0 hero-overlay" />
         <div className="relative z-10 h-full flex items-center justify-center px-4">
-          <div className={`text-center max-w-3xl transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <div className={`text-center max-w-3xl pt-24 md:pt-32 transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <span className="inline-block font-lato text-xs font-semibold tracking-widest uppercase text-white/80 mb-4">Über Uns</span>
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Unsere Geschichte</h1>
             <p className="font-lato text-lg md:text-xl text-white/90">Von der Adria nach Wien – eine Familiengeschichte</p>
@@ -76,6 +76,55 @@ const AboutPage = () => {
       </section>
 
       <section className="section-container section-padding bg-white">
+        <div className="text-center mb-12">
+          <h2 className="font-playfair text-3xl md:text-4xl font-semibold text-graphite mb-4">Zusammenarbeit mit Fischern</h2>
+          <p className="font-lato text-graphite/70 max-w-2xl mx-auto">Nachhaltigkeit und Handschlagqualität als Fundament unseres Erfolgs.</p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="space-y-6 font-lato text-graphite/80 leading-relaxed text-lg">
+            <p>Wir arbeiten eng mit über 20 familiengeführten Fischerbetrieben zusammen. Diese langjährigen Partnerschaften basieren auf Vertrauen, fairen Bedingungen und einem gemeinsamen Verständnis für Qualität.</p>
+            <p>Durch unseren direkten Kontakt und eigene Logistik stellen wir sicher, dass nachhaltige Standards eingehalten werden und der Fang ohne Umwege nach Wien gelangt.</p>
+            <ul className="space-y-3 pt-4">
+              <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-adria rounded-full" /><span className="text-graphite font-medium underline decoration-adria/30">Über 20 Partnerboote in der Adria</span></li>
+              <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-adria rounded-full" /><span className="text-graphite font-medium underline decoration-adria/30">Faire Bedingungen für die Fischer</span></li>
+              <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 bg-adria rounded-full" /><span className="text-graphite font-medium underline decoration-adria/30">Nachhaltige Fangmethoden</span></li>
+            </ul>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-2xl aspect-video bg-gray-100 flex items-center justify-center relative">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              poster="/images/Thunfischfang.jpg"
+            >
+              <source src="/videos/fishery_work.mp4" type="video/mp4" />
+              Ihr Browser unterstützt das Video-Tag nicht.
+            </video>
+          </div>
+        </div>
+
+        <div className="text-center mb-12">
+          <h2 className="font-playfair text-3xl md:text-4xl font-semibold text-graphite mb-4">Eigene Produktion: AMARE</h2>
+          <p className="font-lato text-graphite/70 max-w-2xl mx-auto">Vom Meer direkt in die Manufaktur.</p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1 rounded-xl overflow-hidden shadow-2xl aspect-video bg-gray-100">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/INCm_daSKbw?start=1139&end=1200"
+              title="AMARE Eigenmarke Produktion"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="order-1 lg:order-2 space-y-6 font-lato text-graphite/80 leading-relaxed text-lg">
+            <p>Mit AMARE haben wir eine Eigenmarke geschaffen, die unsere Leidenschaft für das Meer in jedem Produkt widerspiegelt. In unserer eigenen Produktion in Kroatien verarbeiten wir tagesfrische Fänge nach höchsten Standards.</p>
+            <p>Besonders stolz sind wir auf unsere Garnelen-Produkte, die das Herzstück der Marke AMARE bilden und für reine Herkunft und unverfälschten Geschmack stehen.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-container section-padding bg-gray-50">
         <div className="text-center mb-12">
           <h2 className="font-playfair text-3xl md:text-4xl font-semibold text-graphite mb-4">Unsere Meilensteine</h2>
           <p className="font-lato text-graphite/70">Über 30 Jahre Geschichte</p>

@@ -24,7 +24,7 @@ const KontaktPage = () => {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/19.jpg)' }} />
         <div className="absolute inset-0 hero-overlay" />
         <div className="relative z-10 h-full flex items-center justify-center px-4">
-          <div className="text-center max-w-3xl">
+          <div className="text-center max-w-3xl pt-24 md:pt-32">
             <span className="inline-block font-lato text-xs font-semibold tracking-widest uppercase text-white/80 mb-4">Kontakt</span>
             <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Kontaktieren Sie uns</h1>
             <p className="font-lato text-lg md:text-xl text-white/90">Wir freuen uns auf Ihre Nachricht</p>

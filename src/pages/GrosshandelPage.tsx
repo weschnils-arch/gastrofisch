@@ -67,6 +67,14 @@ const GrosshandelPage = () => {
         </div>
       </section>
 
+      <section className="h-[40vh] md:h-[60vh] relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-fixed bg-cover bg-center"
+          style={{ backgroundImage: 'url(/images/tuna_underwater.jpg)' }}
+        />
+        <div className="absolute inset-0 bg-black/20" />
+      </section>
+
       <section className="section-container section-padding bg-gray-50">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -115,7 +123,7 @@ const GrosshandelPage = () => {
               className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-lg font-lato font-bold hover:bg-[#20ba5a] transition-all duration-300 shadow-lg hover:-translate-y-0.5"
             >
               <MessageCircle size={20} />
-              WhatsApp Business (B2B)
+              WhatsApp Business
             </a>
           </div>
         </div>
@@ -136,6 +144,22 @@ const GrosshandelPage = () => {
           ))}
         </div>
       </section>
+
+      {/* Sticky WhatsApp Button */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <a
+          href="https://wa.me/436608553255"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba5a] transition-all duration-300 hover:scale-110 active:scale-95 group"
+          title="WhatsApp Kontakt"
+        >
+          <MessageCircle size={28} />
+          <span className="absolute right-full mr-4 bg-white text-graphite px-4 py-2 rounded-lg text-sm font-bold shadow-xl opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all pointer-events-none whitespace-nowrap border border-gray-100">
+            Haben Sie Fragen?
+          </span>
+        </a>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,7 @@ const DatenschutzPage = () => {
             {/* Hero Section */}
             <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
                 <img
-                    src="/images/legal_bg_1.png"
+                    src="/images/datenschutz_hero.jpg"
                     alt="Datenschutz"
                     className="w-full h-full object-cover"
                 />

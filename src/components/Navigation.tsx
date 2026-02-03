@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import { } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface NavigationProps {
   isScrolled: boolean;
@@ -77,7 +77,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
           </Link>
 
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`z-50 flex flex-col items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${isScrolled ? 'text-graphite bg-black/5' : 'text-white bg-white/10'} ${isMobileMenuOpen ? 'burger-active' : ''}`}
+            className={`z-50 flex flex-col items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${isMobileMenuOpen ? 'text-adria' : (isScrolled ? 'text-graphite bg-black/5' : 'text-white bg-white/10')} ${isMobileMenuOpen ? 'burger-active' : ''}`}
             aria-label="Toggle menu">
             <span className="burger-line" />
             <span className="burger-line" />
@@ -86,8 +86,11 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
         </div>
       </div>
 
-      <div className={`lg:hidden fixed inset-0 top-0 bg-white/95 backdrop-blur-xl z-40 transform transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`lg:hidden fixed inset-0 top-0 bg-white/80 backdrop-blur-2xl z-40 transform transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full p-8 pt-32 space-y-6">
+          <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-10 right-10 text-adria p-2">
+            <X size={32} />
+          </button>
           <img src="/images/logo_grau.svg" alt="Logo" className="h-16 w-auto mx-auto mb-8" />
           {navLinks.map((link) => (
             <Link key={link.path} to={link.path} onClick={() => setIsMobileMenuOpen(false)}

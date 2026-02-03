@@ -86,7 +86,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
         </div>
       </div>
 
-      <div className={`lg:hidden fixed inset-0 top-0 bg-white/80 backdrop-blur-2xl z-40 transform transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`lg:hidden fixed inset-0 top-0 bg-white backdrop-blur-3xl z-40 transform transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full p-8 pt-32 space-y-6">
           <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-10 right-10 text-adria p-2">
             <X size={32} />

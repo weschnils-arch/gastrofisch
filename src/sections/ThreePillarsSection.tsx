@@ -41,7 +41,7 @@ const PillarCard = ({ title, hoverText, ctaText, ctaLink, image, delay }: Pillar
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-graphite/90 via-graphite/20 to-transparent transition-opacity duration-500 opacity-60 group-hover:opacity-80" />
 
-      <div className="absolute inset-x-4 bottom-4 md:inset-x-8 md:bottom-8">
+      <div className="absolute inset-x-4 bottom-10 md:inset-x-8 md:bottom-8">
         <div className={`glass-card p-6 md:p-8 rounded-xl transform transition-all duration-500 ${isHovered ? 'translate-y-0' : 'translate-y-4'}`}>
           <h3 className="font-playfair text-2xl md:text-3xl font-bold text-white mb-3 tracking-wide">{title}</h3>
           <div className={`overflow-hidden transition-all duration-700 ${isHovered ? 'max-h-40 opacity-100 mb-6' : 'max-h-0 opacity-0 mb-0'}`}>

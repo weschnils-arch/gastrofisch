@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import { X } from 'lucide-react';
+import { } from 'lucide-react';
 
 interface NavigationProps {
   isScrolled: boolean;
@@ -86,9 +86,8 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
         </div>
       </div>
 
-      <div className={`lg:hidden fixed inset-0 top-0 bg-white/40 backdrop-blur-2xl z-40 transform transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col h-full p-8 pt-24 space-y-6">
-          <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-6 right-6 text-graphite p-2"><X size={32} /></button>
+      <div className={`lg:hidden fixed inset-0 top-0 bg-white/95 backdrop-blur-xl z-40 transform transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col h-full p-8 pt-32 space-y-6">
           <img src="/images/logo_grau.svg" alt="Logo" className="h-16 w-auto mx-auto mb-8" />
           {navLinks.map((link) => (
             <Link key={link.path} to={link.path} onClick={() => setIsMobileMenuOpen(false)}

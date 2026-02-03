@@ -19,7 +19,7 @@ const AboutSection = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div className={`relative transition-all duration-800 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
           <div className="relative rounded-lg overflow-hidden shadow-xl">
-            <img src="/images/about/ivo.jpg" alt="Ivo Bartulović - Gründer" className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover" />
+            <img src="/images/about/ivo.webp" alt="Ivo Bartulović - Gründer" className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-deepblue/30 to-transparent" />
           </div>
           <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-adria/10 rounded-lg -z-10" />

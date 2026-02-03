@@ -22,15 +22,15 @@ const AboutPage = () => {
   ];
 
   const founders = [
-    { name: 'Ivo Bartulović', role: 'Gründer & Geschäftsführer', image: '/images/about/ivo.jpg', description: 'Der visionäre Gründer, der 1990 alles begann.' },
-    { name: 'Toni Bartulović', role: 'Geschäftsführer', image: '/images/about/team.jpg', description: 'Seit 2004 an Bord und treibt die Expansion voran.' },
-    { name: 'Milan Prgomet', role: 'Geschäftsführer Wien', image: '/images/about/milan.jpg', description: 'Der Architekt der Wiener Expansion.' },
+    { name: 'Ivo Bartulović', role: 'Gründer & Geschäftsführer', image: '/images/about/ivo.webp', description: 'Der visionäre Gründer, der 1990 alles begann.' },
+    { name: 'Toni Bartulović', role: 'Geschäftsführer', image: '/images/about/team.webp', description: 'Seit 2004 an Bord und treibt die Expansion voran.' },
+    { name: 'Milan Prgomet', role: 'Geschäftsführer Wien', image: '/images/about/milan.webp', description: 'Der Architekt der Wiener Expansion.' },
   ];
 
   return (
     <div className="relative">
       <div ref={heroRef} className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/about_hero_new.jpg)' }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/about_hero_new.webp)' }} />
         <div className="absolute inset-0 hero-overlay" />
         <div className="relative z-10 h-full flex items-center justify-center px-4">
           <div className={`text-center max-w-3xl pt-24 md:pt-32 transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
@@ -94,9 +94,9 @@ const AboutPage = () => {
             <video
               className="w-full h-full object-cover"
               controls
-              poster="/images/Thunfischfang.jpg"
+              poster="/images/Thunfischfang.webp"
             >
-              <source src="/videos/fishery_work.mp4" type="video/mp4" />
+              <source src="/videos/fishery_work.webm" type="video/mp4" />
               Ihr Browser unterstützt das Video-Tag nicht.
             </video>
           </div>

@@ -38,7 +38,7 @@ const GrosshandelPage = () => {
   return (
     <div className="relative">
       <div ref={heroRef} className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/thunfischfang_bg.jpg)' }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/thunfischfang_bg.webp)' }} />
         <div className="absolute inset-0 hero-overlay" />
         <div className="relative z-10 h-full flex items-center justify-center px-4">
           <div className={`text-center max-w-3xl pt-24 md:pt-32 transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
@@ -70,7 +70,7 @@ const GrosshandelPage = () => {
       <section className="h-[40vh] md:h-[60vh] relative overflow-hidden">
         <div
           className="absolute inset-0 bg-fixed bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/tuna_underwater.jpg)' }}
+          style={{ backgroundImage: 'url(/images/tuna_underwater.webp)' }}
         />
         <div className="absolute inset-0 bg-black/20" />
       </section>

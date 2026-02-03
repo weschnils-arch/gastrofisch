@@ -15,7 +15,7 @@ const BistroTeaserSection = () => {
 
   return (
     <section ref={sectionRef} className="relative w-full min-h-[60vh] md:min-h-[70vh] overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/bistro_oktopus.jpg)' }} />
+      <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/bistro_oktopus.webp)' }} />
       <div className="absolute inset-0" style={{ background: 'rgba(29, 69, 137, 0.5)' }} />
       <div className="relative z-10 h-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className={`text-center max-w-2xl mx-auto transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>

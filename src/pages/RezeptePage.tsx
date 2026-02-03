@@ -70,7 +70,7 @@ const RezeptePage = () => {
   return (
     <div className="bg-white min-h-screen">
       <div className="relative h-[50vh] md:h-[60vh] overflow-hidden mb-12 md:mb-20">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/Adria_Kroatien.jpg)' }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/Adria_Kroatien.webp)' }} />
         <div className="absolute inset-0 hero-overlay" />
         <div className="relative z-10 h-full flex items-center justify-center px-4">
           <div className="text-center max-w-3xl pt-24 md:pt-32">
@@ -222,18 +222,18 @@ const RezeptePage = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-16 opacity-80">
             {[
-              { name: 'Seeteufel', src: '/images/illustrations/seeteufel.png' },
-              { name: 'Scampi', src: '/images/illustrations/scampi.png' },
-              { name: 'Oktopus', src: '/images/illustrations/oktopus.png' },
-              { name: 'Thunfisch', src: '/images/illustrations/thunfisch.png' },
-              { name: 'Garnele', src: '/images/illustrations/garnele.png' },
-              { name: 'Goldbrasse', src: '/images/illustrations/goldbrasse.png' },
-              { name: 'Seehecht', src: '/images/illustrations/seehecht.png' },
-              { name: 'Sepia', src: '/images/illustrations/sepia.png' },
-              { name: 'Wolfsbarsch', src: '/images/illustrations/wolfsbarsch.png' },
-              { name: 'Calamari', src: '/images/illustrations/calamari.png' },
-              { name: 'Miesmuscheln', src: '/images/illustrations/miesmuscheln.png' },
-              { name: 'Auster', src: '/images/illustrations/auster.png' }
+              { name: 'Seeteufel', src: '/images/illustrations/seeteufel.webp' },
+              { name: 'Scampi', src: '/images/illustrations/scampi.webp' },
+              { name: 'Oktopus', src: '/images/illustrations/oktopus.webp' },
+              { name: 'Thunfisch', src: '/images/illustrations/thunfisch.webp' },
+              { name: 'Garnele', src: '/images/illustrations/garnele.webp' },
+              { name: 'Goldbrasse', src: '/images/illustrations/goldbrasse.webp' },
+              { name: 'Seehecht', src: '/images/illustrations/seehecht.webp' },
+              { name: 'Sepia', src: '/images/illustrations/sepia.webp' },
+              { name: 'Wolfsbarsch', src: '/images/illustrations/wolfsbarsch.webp' },
+              { name: 'Calamari', src: '/images/illustrations/calamari.webp' },
+              { name: 'Miesmuscheln', src: '/images/illustrations/miesmuscheln.webp' },
+              { name: 'Auster', src: '/images/illustrations/auster.webp' }
             ].map((fish, i) => (
               <div key={i} className="flex flex-col items-center group text-center">
                 <div className="w-full aspect-square mb-4 p-4 grayscale hover:grayscale-0 transition-all duration-700 transform group-hover:scale-110 flex items-center justify-center cursor-default">

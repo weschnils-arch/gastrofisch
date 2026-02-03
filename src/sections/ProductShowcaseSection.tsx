@@ -4,14 +4,14 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 interface Product { id: string; name: string; illustration: string; description: string; features: string[]; season?: string; }
 
 const products: Product[] = [
-  { id: 'seeteufel', name: 'Seeteufel', illustration: '/images/illustrations/seeteufel.png', description: 'Der Seeteufel ist ein geschätzter Speisefisch mit festem, weißem Fleisch.', features: ['Wildfang aus der Adria', 'Festes, weißes Fleisch', 'Milder Geschmack'], season: 'Ganzjährig' },
-  { id: 'scampi', name: 'Scampi', illustration: '/images/illustrations/scampi.png', description: 'Unsere Scampi stammen aus kroatischem Wildfang.', features: ['Kroatischer Wildfang', 'Festes Fleisch', 'Delikater Geschmack'], season: 'März - November' },
-  { id: 'oktopus', name: 'Oktopus', illustration: '/images/illustrations/oktopus.png', description: 'Frischer Oktopus aus der Adria.', features: ['Frisch aus der Adria', 'Zartes Fleisch', 'Mediterraner Geschmack'], season: 'Ganzjährig' },
-  { id: 'thunfisch', name: 'Blauflossenthunfisch', illustration: '/images/illustrations/thunfisch.png', description: 'Der Adriatische Blauflossenthunfisch wird international geschätzt.', features: ['Adriatische Zucht', 'Spitzenqualität', 'Reich an Omega-3'], season: 'Ganzjährig' },
-  { id: 'garnele', name: 'Garnele', illustration: '/images/illustrations/garnele.png', description: 'Kroatische Garnelen aus Wildfang – das Original seit 1990.', features: ['Kroatischer Wildfang', 'Das Original seit 1990', 'Süß und zart'], season: 'März - November' },
-  { id: 'goldbrasse', name: 'Goldbrasse', illustration: '/images/illustrations/goldbrasse.png', description: 'Die Goldbrasse ist ein Klassiker der mediterranen Küche.', features: ['Mediterraner Klassiker', 'Feines Fleisch', 'Ideal für den Grill'], season: 'Ganzjährig' },
-  { id: 'seehecht', name: 'Seehecht', illustration: '/images/illustrations/seehecht.png', description: 'Der Seehecht bietet festes, weißes Fleisch.', features: ['Festes Fleisch', 'Nussiger Geschmack', 'Vielseitig einsetzbar'], season: 'Ganzjährig' },
-  { id: 'sepia', name: 'Sepia', illustration: '/images/illustrations/sepia.png', description: 'Frische Sepia aus der Adria.', features: ['Frisch aus der Adria', 'Mediterrane Delikatesse'], season: 'Ganzjährig' },
+  { id: 'seeteufel', name: 'Seeteufel', illustration: '/images/illustrations/seeteufel.webp', description: 'Der Seeteufel ist ein geschätzter Speisefisch mit festem, weißem Fleisch.', features: ['Wildfang aus der Adria', 'Festes, weißes Fleisch', 'Milder Geschmack'], season: 'Ganzjährig' },
+  { id: 'scampi', name: 'Scampi', illustration: '/images/illustrations/scampi.webp', description: 'Unsere Scampi stammen aus kroatischem Wildfang.', features: ['Kroatischer Wildfang', 'Festes Fleisch', 'Delikater Geschmack'], season: 'März - November' },
+  { id: 'oktopus', name: 'Oktopus', illustration: '/images/illustrations/oktopus.webp', description: 'Frischer Oktopus aus der Adria.', features: ['Frisch aus der Adria', 'Zartes Fleisch', 'Mediterraner Geschmack'], season: 'Ganzjährig' },
+  { id: 'thunfisch', name: 'Blauflossenthunfisch', illustration: '/images/illustrations/thunfisch.webp', description: 'Der Adriatische Blauflossenthunfisch wird international geschätzt.', features: ['Adriatische Zucht', 'Spitzenqualität', 'Reich an Omega-3'], season: 'Ganzjährig' },
+  { id: 'garnele', name: 'Garnele', illustration: '/images/illustrations/garnele.webp', description: 'Kroatische Garnelen aus Wildfang – das Original seit 1990.', features: ['Kroatischer Wildfang', 'Das Original seit 1990', 'Süß und zart'], season: 'März - November' },
+  { id: 'goldbrasse', name: 'Goldbrasse', illustration: '/images/illustrations/goldbrasse.webp', description: 'Die Goldbrasse ist ein Klassiker der mediterranen Küche.', features: ['Mediterraner Klassiker', 'Feines Fleisch', 'Ideal für den Grill'], season: 'Ganzjährig' },
+  { id: 'seehecht', name: 'Seehecht', illustration: '/images/illustrations/seehecht.webp', description: 'Der Seehecht bietet festes, weißes Fleisch.', features: ['Festes Fleisch', 'Nussiger Geschmack', 'Vielseitig einsetzbar'], season: 'Ganzjährig' },
+  { id: 'sepia', name: 'Sepia', illustration: '/images/illustrations/sepia.webp', description: 'Frische Sepia aus der Adria.', features: ['Frisch aus der Adria', 'Mediterrane Delikatesse'], season: 'Ganzjährig' },
 ];
 
 const ProductShowcaseSection = () => {

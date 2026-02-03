@@ -21,7 +21,7 @@ const KontaktPage = () => {
   return (
     <div className="relative">
       <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/19.jpg)' }} />
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(/images/19.webp)' }} />
         <div className="absolute inset-0 hero-overlay" />
         <div className="relative z-10 h-full flex items-center justify-center px-4">
           <div className="text-center max-w-3xl pt-24 md:pt-32">

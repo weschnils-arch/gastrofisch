@@ -10,7 +10,7 @@ const ImpressumPage = () => {
             {/* Hero Section */}
             <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
                 <img
-                    src="/images/impressum_hero_v2.jpg"
+                    src="/images/impressum_hero_v2.webp"
                     alt="Impressum"
                     className="w-full h-full object-cover"
                 />

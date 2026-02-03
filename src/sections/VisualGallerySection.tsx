@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
 const galleryImages = [
-    { src: '/images/gallery/boat.jpg', alt: 'Fischerboot auf der Adria', title: 'Unsere Flotte' },
-    { src: '/images/gallery/production.jpg', alt: 'Produktion in Kroatien', title: 'Präzise Verarbeitung' },
-    { src: '/images/gallery/display.jpg', alt: 'Fischvitrine', title: 'Tagesfrische Auswahl' },
-    { src: '/images/gallery/fisherman.jpg', alt: 'Fischer bei der Arbeit', title: 'Echtes Handwerk' },
-    { src: '/images/gallery/truck.jpg', alt: 'Lieferwagen', title: 'Frischegarantie' },
-    { src: '/images/gallery/seagull.jpg', alt: 'Möwe vor der Adria', title: 'Heimat Adria' },
+    { src: '/images/gallery/boat.webp', alt: 'Fischerboot auf der Adria', title: 'Unsere Flotte' },
+    { src: '/images/gallery/production.webp', alt: 'Produktion in Kroatien', title: 'Präzise Verarbeitung' },
+    { src: '/images/gallery/display.webp', alt: 'Fischvitrine', title: 'Tagesfrische Auswahl' },
+    { src: '/images/gallery/fisherman.webp', alt: 'Fischer bei der Arbeit', title: 'Echtes Handwerk' },
+    { src: '/images/gallery/truck.webp', alt: 'Lieferwagen', title: 'Frischegarantie' },
+    { src: '/images/gallery/seagull.webp', alt: 'Möwe vor der Adria', title: 'Heimat Adria' },
 ];
 
 const VisualGallerySection = () => {

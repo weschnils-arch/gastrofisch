@@ -76,9 +76,9 @@ const ThreePillarsSection = () => {
   }, []);
 
   const pillars = [
-    { title: 'Unsere Boutique', hoverText: 'Erlesener Fisch und Meeresfrüchte für anspruchsvolle Genießer. Erleben Sie ein exklusives Einkaufserlebnis in Wien-Neubau.', ctaText: 'Zum Geschäft', ctaLink: '/einzelhandel', image: '/images/retail/zollergasse.jpg', delay: 0 },
-    { title: 'Für die Gastronomie', hoverText: 'Verlässliche Qualität und Lieferung für Wiens beste Restaurants. Direktimport aus der Adria, tagesfrisch geliefert.', ctaText: 'Zum Großhandel', ctaLink: '/grosshandel', image: '/images/thunfischfang_bg.jpg', delay: 150 },
-    { title: 'Unser Bistro', hoverText: 'Frischer geht es nicht. Genießen Sie unsere Tagesfänge direkt vor Ort in unserem kleinen, feinen Bistro.', ctaText: 'Tisch reservieren', ctaLink: 'https://www.zenchef.com/', image: '/images/bistro_risotto.jpg', delay: 300 },
+    { title: 'Unsere Boutique', hoverText: 'Erlesener Fisch und Meeresfrüchte für anspruchsvolle Genießer. Erleben Sie ein exklusives Einkaufserlebnis in Wien-Neubau.', ctaText: 'Zum Geschäft', ctaLink: '/einzelhandel', image: '/images/retail/zollergasse.webp', delay: 0 },
+    { title: 'Für die Gastronomie', hoverText: 'Verlässliche Qualität und Lieferung für Wiens beste Restaurants. Direktimport aus der Adria, tagesfrisch geliefert.', ctaText: 'Zum Großhandel', ctaLink: '/grosshandel', image: '/images/thunfischfang_bg.webp', delay: 150 },
+    { title: 'Unser Bistro', hoverText: 'Frischer geht es nicht. Genießen Sie unsere Tagesfänge direkt vor Ort in unserem kleinen, feinen Bistro.', ctaText: 'Tisch reservieren', ctaLink: 'https://www.zenchef.com/', image: '/images/bistro_risotto.webp', delay: 300 },
   ];
 
   return (

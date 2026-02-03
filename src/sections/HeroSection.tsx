@@ -23,11 +23,11 @@ const HeroSection = () => {
           loop
           playsInline
           className="w-full h-full object-cover"
-          poster="/images/adria_bg.jpg"
+          poster="/images/adria_bg.webp"
         >
-          <source src="/videos/hero_video.mp4" type="video/mp4" />
+          <source src="/videos/hero_video.webm" type="video/mp4" />
           <source src="/videos/hero_video.webm" type="video/webm" />
-          <img src="/images/adria_bg.jpg" alt="Fischerboot auf der Adria" className="w-full h-full object-cover" />
+          <img src="/images/adria_bg.webp" alt="Fischerboot auf der Adria" className="w-full h-full object-cover" />
         </video>
       </div>
       <div className="absolute inset-0 hero-overlay" />

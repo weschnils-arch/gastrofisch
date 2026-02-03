@@ -166,9 +166,9 @@ const RezeptePage = () => {
               <div className="p-8 md:p-12">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 md:gap-20">
                   <div className="lg:col-span-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-adria/10 pb-4">
+                    <div className="flex flex-col gap-4 mb-6 border-b border-adria/10 pb-4">
                       <h3 className="font-playfair text-2xl font-semibold text-adria whitespace-nowrap">Zutaten</h3>
-                      <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-1 border border-gray-100 self-start sm:self-auto">
+                      <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-1 border border-gray-100 self-start">
                         <button
                           onClick={() => setPortionCount(Math.max(1, portionCount - 1))}
                           className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-white hover:shadow-sm transition-all text-graphite"

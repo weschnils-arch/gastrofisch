@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { Check, FileText, Truck, Award, Users, Calendar, MessageCircle, Clock, CreditCard, ShieldCheck } from 'lucide-react';
+import { Check, FileText, Truck, Award, Users, Calendar, MessageCircle, Clock, CreditCard, ShieldCheck, X, Eye, Download } from 'lucide-react';
 
 const GrosshandelPage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showPdfModal, setShowPdfModal] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -85,13 +86,37 @@ const GrosshandelPage = () => {
               <div className="flex items-center gap-3"><Check className="w-5 h-5 text-adria flex-shrink-0" /><span className="font-lato text-graphite">Wochenaktionen und Saison-Specials</span></div>
               <div className="flex items-center gap-3"><Check className="w-5 h-5 text-adria flex-shrink-0" /><span className="font-lato text-graphite">Preise auf Anfrage</span></div>
             </div>
-            <a href="/images/PDF_ONLINE_katalog 2025_c.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 btn-primary"><FileText size={18} />Katalog herunterladen</a>
+            <a
+              href="/PDF_ONLINE_katalog_2025.pdf"
+              download="Gastro_Fisch_Brac_Katalog_2025.pdf"
+              className="inline-flex items-center gap-2 btn-primary"
+            >
+              <FileText size={18} />
+              Katalog herunterladen
+            </a>
           </div>
-          <div className="bg-white rounded-xl p-8 shadow-md">
-            <div className="aspect-video bg-gray-100 rounded-lg flex items-center justify-center mb-6"><FileText className="w-16 h-16 text-adria/30" /></div>
-            <h3 className="font-playfair text-xl font-semibold text-graphite mb-2">Gastro Fisch Brač Katalog 2025</h3>
-            <p className="font-lato text-sm text-graphite/60 mb-4">PDF • 5.2 MB • 48 Seiten</p>
-            <p className="font-lato text-sm text-graphite/70">Unser aktueller Katalog mit allen Produkten.</p>
+          <div className="flex justify-center">
+            <div
+              onClick={() => setShowPdfModal(true)}
+              className="group relative block cursor-pointer"
+            >
+              <div className="relative overflow-hidden rounded-xl shadow-2xl transition-all duration-500 group-hover:shadow-3xl group-hover:-translate-y-2">
+                <img
+                  src="/images/katalog_cover.webp"
+                  alt="Gastro Fisch Brač Produktkatalog 2025"
+                  className="w-full max-w-[420px] h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-adria/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                  <span className="inline-flex items-center gap-2 bg-white text-adria px-6 py-3 rounded-lg font-lato font-bold shadow-lg">
+                    <Eye size={18} />
+                    Vorschau öffnen
+                  </span>
+                </div>
+              </div>
+              <div className="mt-4 text-center">
+                <p className="font-lato text-sm text-graphite/60">Klicken für Vorschau • 48 Seiten</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -160,6 +185,52 @@ const GrosshandelPage = () => {
           </span>
         </a>
       </div>
+
+      {/* PDF Modal */}
+      {showPdfModal && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+          onClick={() => setShowPdfModal(false)}
+        >
+          <div
+            className="relative w-full max-w-5xl h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="absolute top-0 left-0 right-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+              <div>
+                <h3 className="font-playfair text-xl font-semibold text-graphite">Gastro Fisch Brač Katalog 2025</h3>
+                <p className="font-lato text-sm text-graphite/60">48 Seiten</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href="/PDF_ONLINE_katalog_2025.pdf"
+                  download="Gastro_Fisch_Brac_Katalog_2025.pdf"
+                  className="inline-flex items-center gap-2 bg-adria text-white px-4 py-2 rounded-lg font-lato font-bold hover:bg-adria/90 transition-colors"
+                >
+                  <Download size={18} />
+                  Download
+                </a>
+                <button
+                  onClick={() => setShowPdfModal(false)}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                >
+                  <X size={20} className="text-graphite" />
+                </button>
+              </div>
+            </div>
+
+            {/* PDF Embed */}
+            <div className="w-full h-full pt-20">
+              <iframe
+                src="/PDF_ONLINE_katalog_2025.pdf"
+                className="w-full h-full"
+                title="Gastro Fisch Brač Produktkatalog 2025"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
